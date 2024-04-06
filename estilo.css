@@ -1,0 +1,145 @@
+﻿body{
+	min-width: 960px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background: #79442a url(imagens/fundo.png) repeat-x;
+	color: #36352e;
+	margin: 0px;
+}
+
+#container{
+	width: 900px;
+	min-width: 900px;
+	margin: 0px auto;
+	border-left: 2px groove #b19e90;
+	border-right: 2px groove #b19e90;
+}
+
+#logo{
+	background: #744529 url(imagens/topo.jpg) no-repeat;
+	width: 900px;
+	height: 250px;
+}
+
+#menu{
+	width: 900px;
+	height: 35px;
+	background: #744529 url(imagens/menu.jpg);
+	color: #ffffff;
+	line-height: 35px
+}
+
+#menu ul{
+	padding: 0px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#menu li{
+	list-style: none;
+	display: inline;
+}
+
+#menu li a:link{
+	height: 35px;
+	padding: 8px 15px 9px 15px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#menu li a:hover{
+	background: #744529 url(imagens/menuhover.jpg);
+}
+
+#menu li a:visited{
+	height: 35px;
+	padding: 8px 15px 9px 15px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#corpo{
+	width: 870px;
+	padding: 15px 15px 30px 15px;
+	background: #ffffff;
+	clear: both;
+	float: left;
+}
+
+#rodape{
+	width: 870px;
+	padding: 15px 15px 30px 15px;
+	background: #ffffff;
+	clear: both;
+	float: left;
+}
+
+#rodape p{
+	border-top: 1px solid #d4d0af;	
+	font-size: 12px;
+	color: #666666;
+	margin:0px;
+	text-align:center;
+}
+
+/* INSIRA O CSS ABAIXO! */
+#titulocard{
+width: 225px;
+padding: 3px  0px  3px  0px;
+background-color: #5c1e00;
+border: 1px groove #b19e90;
+color: #ffffff;
+font-weight: bold;
+text-indent: 10px;
+float: left;
+clear: left;
+}
+#cardapio{
+	width: 205px;
+	height: 200px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px groove #b19e90;
+	float: left;
+	clear: left;
+	overflow: auto;
+}
+#titulodisk{
+	width: 225px;
+	padding: 3px 0px  3px  0px;
+	background-color: #5c1e00;
+	border: 1px groove #b19e90;
+	color: #ffffff;
+	font-weight: bold;
+	text-indent: 10px;
+	float: left;
+	clear: left;
+	margin-top:  15px;
+}
+#disk{
+	width: 206px;
+	height: 57px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px groove #b19e90;
+	float: left;
+	clear: left;
+}
+#disk p{
+	margin: 10px;
+}
+#titulooferta{
+	width: 620px;
+	padding: 3px 0px 3px 0px;
+	background-color: #5c1e00;
+	border: 1px groove #b19e90;
+	color: #ffffff;
+	font-weight: bold;
+	text-indent: 10px;
+	float: right;
+}
+#oferta
