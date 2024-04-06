@@ -1,130 +1,209 @@
-#body{
-    min-width: 960px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 12px;
-    background-color: #B5C884;
-    color: #36352e;
-    margin: 0px;
+﻿body{
+	min-width: 960px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background: #79442a url(imagens/fundo.png) repeat-x;
+	color: #36352e;
+	margin: 0px;
 }
+
 #container{
-    width: 900px;
-    margin: 0px auto;
-    height: 100%;
+	width: 900px;
+	min-width: 900px;
+	margin: 0px auto;
+	border-left: 2px groove #b19e90;
+	border-right: 2px groove #b19e90;
 }
-#cabecalho{
-    width: 100%;
-    background-color: #625f4d;
-    height: 40px;
-    color: #ffffff;
-}
-#topo{
-    background-image:url(imagens/topo.png);
-    width: 900px;
-    height: 200px;
-    border-left: outset 2px #B5C884;
-}
-#topo h1{
-    width: 320px;
-    font-size: 100px;
-    color: #ffffff;
-    margin: 0px 0px 0px 30px;
-    border-bottom:  3px groove #ffffff;
-}
-#topo h2{
-    width: 320px;
-    font-size: 25px;
-    color: #ffffff;
-    margin: 0px 0px 0px 30px;
-}
+
 #logo{
-    float: left;
+	background: #744529 url(imagens/topo.jpg) no-repeat;
+	width: 900px;
+	height: 250px;
 }
+
 #menu{
-    background:#e0ddc7 url(sombra.png) repeat-y right;
-    float: left;
-    width: 180px;
-    min-height: 400px ;
-    padding: 10px;
+	width: 900px;
+	height: 35px;
+	background: #744529 url(imagens/menu.jpg);
+	color: #ffffff;
+	line-height: 35px
 }
+
+#menu ul{
+	padding: 0px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#menu li{
+	list-style: none;
+	display: inline;
+}
+
+#menu li a:link{
+	height: 35px;
+	padding: 8px 15px 9px 15px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#menu li a:hover{
+	background: #744529 url(imagens/menuhover.jpg);
+}
+
+#menu li a:visited{
+	height: 35px;
+	padding: 8px 15px 9px 15px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
 #corpo{
-    background-color: #e8e6d9;
-    float: right;
-    width: 680px;
-    min-height: 400px;
-    padding: 10px;
+	width: 870px;
+	padding: 15px 15px 30px 15px;
+	background: #ffffff;
+	clear: both;
+	float: left;
 }
-#menu a:link{
-    float: left;
-    clear: both;
-    padding: 5px;
-    text-decoration: none;
-    border-bottom: 1px dashed #d4d0af ;
-    display: block;
-    width: 160px;
-    color: #373737;
-    font-size: 14px;
-    text-transform: capitalize;
+
+#rodape{
+	width: 870px;
+	padding: 15px 15px 30px 15px;
+	background: #ffffff;
+	clear: both;
+	float: left;
 }
-#menu a:hover{
-    background-color: #e8e6d9;
-    border-left: 3px solid #373737;
+
+#rodape p{
+	border-top: 1px solid #d4d0af;	
+	font-size: 12px;
+	color: #666666;
+	margin:0px;
+	text-align:center;
 }
-#menu a:visited{
-    background-color: #373737;
-    border-bottom: 1px dashed #d4d0af;
+
+/* INSIRA O CSS ABAIXO! */
+#titulocard{
+width: 225px;
+padding: 3px  0px  3px  0px;
+background-color: #5c1e00;
+border: 1px groove #b19e90;
+color: #ffffff;
+font-weight: bold;
+text-indent: 10px;
+float: left;
+clear: left;
 }
-#menu a:active{
-    background-color: #373737;
-    border-left: 3px solid #373737;
-    color: #e8e6d9;
+#cardapio{
+	width: 205px;
+	height: 200px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px groove #b19e90;
+	float: left;
+	clear: left;
+	overflow: auto;
 }
-.titulo{
-    font-size: 16px;
-    margin: 0px 0px 20px 0px;
-    font color: #7876e;
+#titulodisk{
+	width: 225px;
+	padding: 3px 0px  3px  0px;
+	background-color: #5c1e00;
+	border: 1px groove #b19e90;
+	color: #ffffff;
+	font-weight: bold;
+	text-indent: 10px;
+	float: left;
+	clear: left;
+	margin-top:  15px;
 }
-#corpo fieldset{
-    border: 1px solid #d4d0af;
-    padding: 5px;
-    width: 500px;
-    margin: 0px auto;
+#disk{
+	width: 206px;
+	height: 57px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px groove #b19e90;
+	float: left;
+	clear: left;
 }
-#corpo fieldset label{
-    float: left;
-    font-size: 15px;
-    width: 80px;
+#disk p{
+	margin: 10px;
 }
-#corpo fieldset input{
-    float: left;
-    clear: right;
-    width: 400px;
-    padding: 5px;
-    border: solid 1px #eeede7;
-    margin-bottom: 5px;
+#titulooferta{
+	width: 620px;
+	padding: 3px 0px 3px 0px;
+	background-color: #5c1e00;
+	border: 1px groove #b19e90;
+	color: #ffffff;
+	font-weight: bold;
+	text-indent: 10px;
+	float: right;
 }
-#corp fieldset textarea{
-    float: left;
-    clear: right;
-    width: 400px;
-    height: 100px;
-    padding: 5px;
-    border: solid 1px #eeede;
-    margin-bottom: 5px;
-    max-width:400px;
-    max-height: 100px;
-    min-width: 400px;
-    min-height: 100px;
+#oferta{
+	width: 600px;
+	height: 320px;
+	padding: 10px;
+	background-color: #ffffff;
+	background-image: url(oferta.jpg);
+	border: 1px groove #b19e90;
+	float:right;
 }
-#corpo fieldset .enviar {
-    float: none;
-    margin-bottom: 5px; /* Ajuste da margem inferior */
-    padding: 10px 5px 5px; /* Ajuste do preenchimento */
-    border: 1px groove #d4d2c7; /* Estilo, largura e cor da borda */
-    width: 80px; /* Largura do botão */
-    font-size: 14px; /* Tamanho da fonte */
-    color: #53ae4a; /* Cor da fonte */
-    cursor: pointer;
+#quadrodeoferta{
+	width: 220;
+	height: 60px;
+	padding: 10px;
+	background-image: url(imagens/fundoferta.png);
+	border: 1px groove #ffffff;
+	float: right;
+	margin-top: 230px ;
 }
-#contato fieldset.enviar:active{
-    background-color: #d4d2c7;
+#titulopedido{
+	width: 870px;
+	padding: 3px 0px 3px 0px;
+	background-color: #5c1e00;
+	border: 1px groove #b19e90;
+	color: #ffffff;
+	font-weight: bold;
+	text-indent: 10px;
+	float: right;
+	margin-top: 15px;
+}
+#pedido{
+	width: 850px;
+	padding: 10px;
+	border: 1px groove #b19e90;
+	float: right;
+}
+#pedidp h1{
+	font-size: 17px;
+	margin-top: 0px 0px 0px 20px;
+}
+#pedido label{
+	width: 100px;
+	float: left;
+	clear: left;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+#pedido input{
+	width: 720px;
+	float: right;
+	clear: right;
+	padding: 5px;
+	margin-bottom: 7px;
+	border: 1px groove #b19e90;
+}
+#pedido .enviar{
+	width: 60px;
+	float: right;
+	padding: 5px;
+	margin: 0px;
+
+}
+#pedido .enviar:active{
+	border: 1px inset #998566;
+	background-color: #e9e3da;
 }
