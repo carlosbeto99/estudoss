@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Estilos gerais */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(imagens/floresta\ 3.jpg); /* Um verde claro, inspirado no clip art */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden; /* Evita a barra de rolagem horizontal */
+    position: relative; /* Posicionamento relativo para os nomes flutuantes */
+  }
+
+  /* Estiliza o input */
+  #input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #a5d6a7;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Estiliza o div de exibição */
+  #display {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #a5d6a7;
+    border-radius: 5px;
+    min-height: 100px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+  }
+
+  /* Estilo para os nomes flutuantes */
+  .floating-name {
+    position: absolute;
+    font-size: 16px; /* Aumente o tamanho da fonte conforme necessário */
+    padding: 5px; /* Espaçamento interno para o fundo */
+    border-radius: 5px; /* Bordas arredondadas para o fundo */
+    animation: floatAnimation 20s infinite linear, blinkingTextBackground 1s infinite; /* Adiciona as animações */
+  }
+
+  /* Keyframes para a animação de flutuação */
+  @keyframes floatAnimation {
+    from {
+      transform: translate(0);
+    }
+    to {
+      transform: translate(100vw, -100vh);
+    }
+  }
+
+  /* Keyframes para a animação de piscar do texto e do fundo */
+  @keyframes blinkingTextBackground {
+    0%, 100% {
+      color: #000;
+      background-color: transparent;
+    }
+    50% {
+      color: #fff;
+      background-color: #6aa157;
+    }
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="input" placeholder="ME DIGA SEU NOME">
+<div id="display"></div>
+
+<script>
+// Mapeia cada letra para o caminho da imagem de clip art correspondente
+var clipArtMap = {
+  'a': 'imagens/A.png',
+  'b': 'imagens/B.png',
+  'c': 'imagens/C.png',
+  'd': 'imagens/D.png',
+  'e': 'imagens/E.png',
+  'f': 'imagens/F.png',
+  'g': 'imagens/G.png',
+  'h': 'imagens/H.png',
+  'i': 'imagens/I.png',
+  'j': 'imagens/J.png',
+  'k': 'imagens/K.png',
+  'l': 'imagens/L.png',
+  'm': 'imagens/M.png',
+  'n': 'imagens/N.png',
+  'o': 'imagens/O.png',
+  'p': 'imagens/P.png',
+  'q': 'imagens/Q.png',
+  'r': 'imagens/R.png',
+  's': 'imagens/S.png',
+  't': 'imagens/T.png',
+  'u': 'imagens/U.png',
+  'v': 'imagens/V.png',
+  'w': 'imagens/W.png',
+  'x': 'imagens/X.png',
+  'y': 'imagens/Y.png',
+  'z': 'imagens/Z.png',
+
+};
+
+var nameList = []; // Array para armazenar os nomes inseridos
+var maxFloatingNames = 10; // Número máximo de nomes flutuantes na tela
+var floatingNamesCount = 0; // Contador de nomes flutuantes
+
+// Função para atualizar a exibição e criar nomes flutuantes
+function updateDisplay(event) {
+  if (event.key === 'Enter') {
+    var input = document.getElementById('input').value.toLowerCase();
+    nameList.unshift(input); // Adiciona o novo nome no início do array
+    document.getElementById('input').value = ''; // Limpa o campo de input
+    displayNames(); // Chama a função para exibir os nomes na lista
+    createFloatingName(input); // Cria o nome flutuante
+  }
+}
+
+// Função para exibir os nomes com clip art na lista
+function displayNames() {
+  var display = document.getElementById('display');
+  display.innerHTML = ''; // Limpa o conteúdo anterior
+
+  nameList.forEach(function(name) {
+    var nameContainer = document.createElement('div');
+    name.split('').forEach(function(letter) {
+      if (clipArtMap[letter]) {
+        var imgElement = document.createElement('img');
+        imgElement.src = clipArtMap[letter];
+        imgElement.style.width = '50px'; // Ajuste o tamanho conforme necessário
+        imgElement.style.height = '50px'; // Ajuste o tamanho conforme necessário
+        nameContainer.appendChild(imgElement);
+      }
+    });
+    display.appendChild(nameContainer);
+  });
+}
+
+// Função para criar nomes flutuantes com clip art para cada letra
+function createFloatingName(name) {
+  if (floatingNamesCount < maxFloatingNames) {
+    var floatingNameContainer = document.createElement('div');
+    floatingNameContainer.classList.add('floating-name');
+    document.body.appendChild(floatingNameContainer);
+
+    name.split('').forEach(function(letter) {
+      if (clipArtMap[letter]) {
+        var imgElement = document.createElement('img');
+        imgElement.src = clipArtMap[letter];
+        imgElement.style.width = '25px'; // Ajuste o tamanho conforme necessário
+        imgElement.style.height = '25px'; // Ajuste o tamanho conforme necessário
+        floatingNameContainer.appendChild(imgElement);
+      }
+    });
+
+    floatingNameContainer.style.left = Math.random() * window.innerWidth + 'px';
+    floatingNameContainer.style.top = Math.random() * window.innerHeight + 'px';
+
+    floatingNameContainer.animate([
+      { transform: 'translate(0, 0)', opacity: 1 },
+      { transform: `translate(${Math.random() * 200 - 100}vw, ${Math.random() * 200 - 100}vh)`, opacity: 0 }
+    ], {
+      duration: 50000, // Aumenta a duração para 20 segundos
+      iterations: Infinity
+    });
+
+    floatingNamesCount++;
+
+    setTimeout(() => {
+      document.body.removeChild(floatingNameContainer);
+      floatingNamesCount--;
+    }, 80000); // Aumenta o tempo para 20 segundos
+  }
+}
+
+// Adiciona o listener para o evento de tecla pressionada no input
+document.getElementById('input').addEventListener('keypress', updateDisplay);
+</script>
+
+</body>
+</html>
